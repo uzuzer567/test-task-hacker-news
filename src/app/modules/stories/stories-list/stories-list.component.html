@@ -1,0 +1,14 @@
+<div 
+    class="list"
+    infinite-scroll
+    [infiniteScrollDistance]="scrollDistance"
+    [infiniteScrollThrottle]="scrollThrottle"
+    (scrolled)="onScroll()"
+>
+    <div *ngFor="let story of idsOfStoriesOnPage;let index = index;trackBy: trackBy">
+        <app-stories-list-item
+          [storyNumber]="index + 1"
+          [storyId]="story"
+        ></app-stories-list-item>
+    </div>
+</div>

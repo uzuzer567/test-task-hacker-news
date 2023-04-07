@@ -1,0 +1,50 @@
+@import 'colors';
+@import 'fonts';
+@import 'utilies';
+
+.footer {
+  padding: 13px 0;
+
+  a {
+    color: black;
+    font-size: $font-size-s;
+    text-decoration: none;
+
+    &:visited {
+      color: #848484;
+    }
+  }
+
+  .footer__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .footer__divider {
+      display: inline-block;
+      margin: 0 5px;
+      color: #848484;
+    }
+  }
+
+  .footer__search {
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    color: #848484;
+    font-size: $font-size-l;
+
+    input {
+      margin-left: 3px;
+
+      @include for-mobile-only {
+        width: 90%;
+        margin: 0;
+      }
+    }
+  }
+}
+

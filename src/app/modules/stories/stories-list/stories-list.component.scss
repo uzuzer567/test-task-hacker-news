@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'fonts';
+@import 'utilies';
+
+a {
+  color: #f6f6ef;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  };
+}
+
+.list {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  padding: 9px;
+  border-bottom: 2px solid $orange-tone-01;
+
+  @include for-mobile-only {
+    padding: 10px 10px 0;
+  }
+}
+

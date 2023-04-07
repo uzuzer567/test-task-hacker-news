@@ -1,0 +1,11 @@
+@import 'utilies';
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  @include for-mobile-only {
+    margin: 0;
+  }
+}

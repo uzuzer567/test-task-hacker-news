@@ -1,0 +1,79 @@
+@import 'colors';
+@import 'fonts';
+@import 'utilies';
+
+a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: $gray-tone-01;
+    }
+}
+
+.item {
+    display: flex;
+    padding-bottom: 2px;
+
+    .item__serial-number {
+        font-size: $font-size-l;
+        color: $gray-tone-01;
+
+        @include for-mobile-only {
+            font-size: $font-size-2xl;
+        }
+    }
+
+    .item__divider {
+        width: 0;
+        height: 0;
+        margin: 5px 3px 0 3px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 8px solid $gray-tone-01;
+
+        @include for-mobile-only {
+            margin-top: 4px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid $gray-tone-01;
+        }
+    }
+
+    .item__info {
+        display: flex;
+        font-size: $font-size-3xs;
+        margin-top: 2px;
+        color: $gray-tone-01;
+
+        @include for-mobile-only {
+            margin-top: 4px;
+            font-size: $font-size-xs;
+            line-height: 16px;
+        }
+
+        .item__info-title {
+            margin-top: 2px;
+            font-size: $font-size-m;
+
+            @include for-mobile-only {
+                font-size: $font-size-2xl;
+            }
+        }
+
+        .item__info-subtitle {
+            font-size: $font-size-xs;
+        }
+    }
+}
+
+.loader {
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

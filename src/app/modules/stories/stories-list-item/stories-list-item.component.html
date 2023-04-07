@@ -1,0 +1,50 @@
+<div *ngIf="!loading; else loader">
+  <div class="item">
+    <span class="item__serial-number">
+      {{ storyNumber }}.
+    </span>
+    <div class="item__info">
+      <div class="item__divider"></div>
+      <div>
+        <div>
+          <a
+            class="item__info-title"
+            href="{{story.url}}"
+            target="_blank"
+          >
+            {{ story.title }}
+          </a>
+          <a 
+            class="item__info-subtitle"
+            href="{{story.url}}"
+            target="_blank"
+          >
+            ({{ story.url | url:'domain' }})
+          </a>
+        </div>
+        <div>
+          {{ story.score }} points by
+          <a href="#" routerLink="/not-found">{{ story.by }}</a>
+          {{ story.time | time }}
+          |
+          <a href="#" routerLink="/not-found">hide</a>
+          |
+          <a href="#" routerLink="/not-found">
+            <span *ngIf="story.descendants">
+              {{ story.descendants }}
+              <span *ngIf="story.descendants === 1">comment</span>
+              <span *ngIf="story.descendants > 1">comments</span>
+            </span>
+            <span *ngIf="!story.descendants">discuss</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>
+  <div class="loader">
+      <app-loader></app-loader>
+  </div>
+</ng-template>
